@@ -1,0 +1,13 @@
+PARI:
+
+tot=0; forstep (n=0, 150000000, 10, a=n^2; if (isprime(a+1) && nextprime(a+2)==a+3 && nextprime(a+4)==a+7 && nextprime(a+8)==a+9 && nextprime(a+10)==a+13 && nextprime(a+14)==a+27, tot+=n)); print(tot)
+
+676333270
+time = 1min, 21,153 ms.
+
+faster, uses that n should be 3 or 4 mod 7:
+
+tot=0; forstep (n=10, 150000000, [50,20], a=n^2; if (isprime(a+1) && nextprime(a+2)==a+3 && nextprime(a+4)==a+7 && nextprime(a+8)==a+9 && nextprime(a+10)==a+13 && nextprime(a+14)==a+27, tot+=n)); print(tot)
+
+676333270
+time = 24,560 ms.

@@ -1,0 +1,115 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3072,        106]
+NotebookOptionsPosition[      2644,         85]
+NotebookOutlinePosition[      2999,        101]
+CellTagsIndexPosition[      2956,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Create the generating function by ranging over primes and multiplying \
+(1,x^p,x^2p,x^3p,...), then finding the factor with a coefficient bigger than \
+5000.\
+\>", "Text",
+ CellChangeTimes->{{3.6395574445872087`*^9, 3.639557503302148*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"i", "=", "0"}], ";", 
+     RowBox[{"a", "=", "0"}], ";", 
+     RowBox[{"generatingfunction", ":=", 
+      RowBox[{"Expand", "[", 
+       RowBox[{"Product", "[", 
+        RowBox[{
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"x", "^", "j"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "0", ",", "100", ",", "p"}], "}"}]}], "]"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"p", ",", 
+           RowBox[{"Prime", " ", "[", 
+            RowBox[{"Range", " ", "[", 
+             RowBox[{"PrimePi", " ", "[", "100", "]"}], "]"}], "]"}]}], 
+          "}"}]}], "]"}], "]"}]}]}], ",", 
+    RowBox[{"a", "<", "5000"}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{"a", "=", 
+     RowBox[{"Coefficient", "[", 
+      RowBox[{"generatingfunction", ",", "x", ",", "i"}], "]"}]}]}], "]"}], 
+  ";", 
+  RowBox[{"Print", " ", "[", 
+   RowBox[{"\"\<Power: \>\"", ",", " ", 
+    RowBox[{"i", "-", "1"}]}], "]"}], ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Coefficient: \>\"", ",", "a"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6396604155304737`*^9, 3.639660431575467*^9}, {
+  3.639660482325791*^9, 3.639660587632269*^9}, {3.639660624123124*^9, 
+  3.6396607441348867`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Power: \"\>", "\[InvisibleSpace]", "71"}],
+  SequenceForm["Power: ", 71],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.639660693169284*^9, 3.639660746826737*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Coefficient: \"\>", "\[InvisibleSpace]", "5007"}],
+  SequenceForm["Coefficient: ", 5007],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.639660693169284*^9, 3.639660746831497*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 605},
+WindowMargins->{{-40, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 249, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[832, 29, 1304, 36, 148, "Input"],
+Cell[CellGroupData[{
+Cell[2161, 69, 218, 5, 21, "Print"],
+Cell[2382, 76, 234, 5, 21, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

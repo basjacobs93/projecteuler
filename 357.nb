@@ -1,0 +1,122 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3877,        113]
+NotebookOptionsPosition[      3556,         96]
+NotebookOutlinePosition[      3909,        112]
+CellTagsIndexPosition[      3866,        109]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"tot", "=", "0"}], ";", 
+     RowBox[{"i", "=", "1"}], ";", 
+     RowBox[{"n", "=", "1"}]}], ",", 
+    RowBox[{"n", "\[LessEqual]", "100000000"}], ",", 
+    RowBox[{
+     RowBox[{"i", "++"}], ";", 
+     RowBox[{"n", "=", 
+      RowBox[{
+       RowBox[{"Prime", "[", "i", "]"}], "-", "1"}]}], ";", 
+     RowBox[{"found", "=", "True"}]}], ",", 
+    RowBox[{
+     RowBox[{"divs", " ", "=", " ", 
+      RowBox[{"Divisors", "[", "n", "]"}]}], ";", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"And", "[", 
+        RowBox[{
+         RowBox[{"SquareFreeQ", "[", "n", "]"}], ",", 
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{"n", ",", "3"}], "]"}], "\[NotEqual]", "2"}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"j", "=", "1"}], ",", 
+          RowBox[{"j", "\[LessEqual]", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Length", "[", "divs", "]"}], "+", "1"}], ")"}], "/", 
+            "2"}]}], ",", 
+          RowBox[{"j", "++"}], ",", " ", 
+          RowBox[{
+           RowBox[{"d", " ", "=", " ", 
+            RowBox[{"divs", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}], ";", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"Element", "[", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"n", "/", "d"}]}], ",", "Primes"}], "]"}], ",", ",", 
+             RowBox[{
+              RowBox[{"found", "=", "False"}], ";", "Break"}]}], "]"}]}]}], 
+         "]"}], ";", 
+        RowBox[{"If", "[", 
+         RowBox[{"found", ",", 
+          RowBox[{"tot", "+=", "n"}]}], "]"}]}]}], "]"}]}]}], "]"}], ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"tot", "+", "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.642778408233883*^9, 3.642778914427202*^9}, {
+   3.6427789532706947`*^9, 3.642779087388081*^9}, 3.6427791570457582`*^9, {
+   3.642779187616701*^9, 3.64277929959513*^9}, {3.642779337480517*^9, 
+   3.64277939098245*^9}, {3.642779558467291*^9, 3.64277955874422*^9}, {
+   3.6427797498237343`*^9, 3.642779757366188*^9}, {3.64277980890975*^9, 
+   3.642779860358019*^9}, {3.642779894213304*^9, 3.642779912031247*^9}, 
+   3.6427800172054577`*^9, {3.6427800477937527`*^9, 3.6427800483240223`*^9}, {
+   3.6427801058452883`*^9, 3.6427801578289547`*^9}, {3.642780239355254*^9, 
+   3.642780253322544*^9}, {3.6427860920848923`*^9, 3.6427861579598494`*^9}, {
+   3.64278652708766*^9, 3.642786553455491*^9}, {3.642786647020424*^9, 
+   3.642786648516828*^9}, {3.642786734224615*^9, 3.642786794786961*^9}, {
+   3.642789885407176*^9, 3.642789887982139*^9}}],
+
+Cell[BoxData["3795"], "Print",
+ CellChangeTimes->{{3.642786127740946*^9, 3.6427861585586853`*^9}, 
+   3.642786557998774*^9, 3.642786649056229*^9, {3.642786705850264*^9, 
+   3.642786747292406*^9}, {3.642786790094995*^9, 3.642786795291005*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 602},
+WindowMargins->{{Automatic, 1}, {Automatic, 0}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2715, 66, 199, "Input"],
+Cell[3298, 90, 242, 3, 21, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
