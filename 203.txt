@@ -1,0 +1,7 @@
+PARI/GP:
+
+tot=0
+rows=51
+binoms = setbinop((x,y)->binomial(x,y),[0..rows-1],[0..rows-1])
+for(i=1,#binoms,if(issquarefree(binoms[i]),tot+=binoms[i]))
+tot

@@ -1,0 +1,5 @@
+PARI/GP:
+
+tot=0
+for(n=1,50000000,if(isprime(2*n^2-1),tot+=1))
+tot

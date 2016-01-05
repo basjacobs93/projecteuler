@@ -1,0 +1,8 @@
+PARI/GP:
+
+tot=0
+for(n=1,1e7,if(sigma(n,0)==sigma(n+1,0),tot=tot+1))
+tot
+
+result:
+986262

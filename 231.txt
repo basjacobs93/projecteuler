@@ -1,0 +1,12 @@
+PARI/GP:
+
+compute(n) = {
+   f = factorint(n);
+   sum(j=1,matsize(f)[1],f[j,1]*f[j,2])
+}
+
+termsum(n,k) = {
+   sum(i=k+1,n,compute(i))-sum(i=1,n-k,compute(i))
+}
+
+termsum(20000000,15000000)
