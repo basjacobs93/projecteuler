@@ -1,0 +1,20 @@
+n^3 + n^2*p = d^3
+(p+n)*n^2 = d^3
+
+below 100:
+p  n
+7  1
+19 8
+37 27
+61 64
+
+We need n to be a cube (otherwise the prime factors in n on the left-hand side do not have multiplicity 3) and n+p also a cube.
+
+Write n=i^3 and n+p=j^3. Hence p=j^3-i^3, so we are looking for prime numbers that are the difference of two cubes. If j=i+k, then p = 3ki^2 + 3k^2i + k^3. Hence p is divisible by k, so we need k=1.
+
+Hence we have p = (i+1)^3-i^3 = 3i^2 + 3i + 1.
+
+Enumerate i and check if 3i^2 + 3i + 1 is a prime below one million.
+
+tot=0; for(i=1, 1000, p=3*i^2+3*i+1; if(p>1000000, break, if(isprime(p), tot+=1))); tot
+%1 = 173
