@@ -1,0 +1,7 @@
+rad(n) = pr=factorint(n); res=1; for(i=1, matsize(pr)[1], res*=pr[i,1]); res
+for(n=1, 100000, print1("("n, ", ", rad(n),"), "))
+
+put in list lt in python and sort:
+print sorted(lst, key=lambda x: x[1])[9999]
+
+21417
