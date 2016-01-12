@@ -1,0 +1,11 @@
+4^t - 2^t = k
+(2^t)^2 - 2^t - k = 0
+2^t = (1 ± √(1+4k)) / 2
+check if (1 + √(1+4k)) / 2 is an integer and if it is a power of 2.
+It is an integer l => k = l(l-1).
+Hence, loop over l and check if k is a power of 2.
+
+powertwo(n) = f=factorint(n); matsize(f)==[1,2] && f[1,1]==2
+found=0; for(l=2, 10^8, k=l*(l-1); if(powertwo(l), found++); if(found/(l-1)<1/12345, print(k); break))
+
+44043947822

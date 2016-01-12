@@ -2,11 +2,10 @@ For n,
 numbers x such that (x-n)|(nx) are what we are looking for.
 Numbers x=n+m for m|n^2 work.
 
-Hence we need to count the number of divisors of n^2 less than 2*n to find the number of distinct solutions.
+Hence we need to count the number of divisors of n^2 less than n to find the number of distinct solutions.
 The first n for which this yields more than 1,000 divisors is the one we're looking for.
 
 PARI/GP:
-? a(n)=(numdiv(n^2)+1)/2
-%6 = (n)->(numdiv(n^2)+1)/2
-? for(i=1,i=10^9,if(a(i)>1000,print(i);break))
+? for(i=1,i=10^9,if((numdiv(i^2)+1)/2>1000,print(i);break))
 180180
+

@@ -1,0 +1,3 @@
+Need a lot of small prime factors:
+
+k=2*3*5*7*11*13*19*23*29; d=0; maxi=0; for(i=1, 10^8, d+=k; j=(numdiv(d^2)+1)/2; if(j>maxi, maxi=j; print(d, " ", j); if(j>4*10^6, break)))

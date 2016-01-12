@@ -26,7 +26,7 @@ def is_strong_harshad(n):
 
 tot = 0
 
-for i in xrange(11,10**6,2):
+for i in xrange(11,10**14,2):
 	if is_prime(i) and is_strong_harshad(int(str(i)[:-1])) and is_right_truncatable_harshad(int(str(i)[:-1])):
 		print i
 		tot += i
