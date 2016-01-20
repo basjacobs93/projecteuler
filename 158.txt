@@ -1,0 +1,11 @@
+We find that a(0) = 0, a(n) = 2*a(n-1) + n-1
+Indeed, for any valid permutation of the n-1 characters, we can put the n-th character in the front or between the two ascending characters. The other options come from a descending chain (there only exists one) of n-1 characters, in which we can put the n-th character in n-1 positions (not in the front).
+
+Since a(n)=2^n-n-1 satisfies this relation (a(n) = 2^n-n-1 = 2*(2^(n-1)-(n-1)-1) + n-1 = 2*a(n-1) + (n-1)), we have 2^n-n-1 options for every n characters picked.
+We can pick n characters in (26 choose n) ways.
+
+In PARI/GP:
+
+maxi=0; maxn=0; for(n=1,26, d=(2^n-n-1)*binomial(26,n); if(d>maxi, maxi=d; maxn=n)); maxi
+%1 = 409511334375
+

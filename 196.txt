@@ -1,0 +1,50 @@
+Row n starts with a(n).
+Then we have a(n+1) = n + a(n).
+So a(n)=n(n-1)/2 + 1.
+Hence row n contains numbers n(n-1)/2 + 1 to n(n-1)/2 + 1 + n
+
+To find S(n), we need to find the elements of row n-2 to n+2 and find the primes.
+An element has at most 5 odd neighbours.
+
+The neighbours of an element k in row n are
+k-n, k-n+1, k-n+2, k-1, k+1, k+n-1, k+n, k+n+1.
+Obviously, if k is prime, then k-1 and k+1 are not (for large k).
+If k is prime and n is even, we need to check if
+k-n, k-n+2, k+n are prime.
+If k is prime and n is odd, we need to check if
+k-n+1, k+n-1, k+n+1 are prime.
+
+To check if an element k of row n (n even) is in a prime triplet:
+- k needs to be prime
+	- two of k-n, k-n+2, k+n are prime
+	or
+	- k-n is prime and k-2 or k-2n is prime
+	or
+	- k-n+2 is prime and k-2n+2 or k+2 is prime
+	or
+	- k+n is prime and k+2n or k+2n+2 is prime
+To check if an element k of row n (n odd) is in a prime triplet:
+- k needs to be prime
+	- two of k-n+1, k+n-1, k+n+1 are prime
+	or
+	- k-n+1 is prime and k-2n+2 or k-2n+4 is prime
+	or
+	- k+n-1 is prime and k-2 or k+2n is prime
+	or
+	- k+n+1 is prime and k+2 or k+2n+2 is prime
+Since we only have odd rows, we are in the second case.
+Loop over primes k from n(n-1)/2 + 1 to n(n-1)/2 + 1 + n where n=5678027 and n= 7208785.
+
+PARI/GP:
+
+n=5678027; j=n*(n-1)/2+1; tot=0; forprime(k=j, j+n, if((isprime(k-n+1)+isprime(k+n-1)+isprime(k+n+1))>=2, tot+=k, if((isprime(k-n+1)&(isprime(k-2*n+2)||isprime(k-2*n+4)))||(isprime(k+n-1)&(isprime(k-2)||isprime(k+2*n)))||(isprime(k+n+1)&(isprime(k+2)||isprime(k+2*n+2))),tot+=k))); tot
+79697256800321526
+
+n=7208785; j=n*(n-1)/2+1; tot=0; forprime(k=j, j+n, if((isprime(k-n+1)+isprime(k+n-1)+isprime(k+n+1))>=2, tot+=k, if((isprime(k-n+1)&(isprime(k-2*n+2)||isprime(k-2*n+4)))||(isprime(k+n-1)&(isprime(k-2)||isprime(k+2*n)))||(isprime(k+n+1)&(isprime(k+2)||isprime(k+2*n+2))),tot+=k))); tot
+242605983970758409
+
+sum = 322303240771079935
+
+(isprime(k-n+1)&(isprime(k-2*n+2)||isprime(k-2*n+4)))
+(isprime(k+n-1)&(isprime(k-2)||isprime(k+2*n)))
+(isprime(k+n+1)&(isprime(k+2)||isprime(k+2*n+2)))

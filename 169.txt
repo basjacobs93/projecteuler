@@ -1,0 +1,33 @@
+1       1
+10      5
+100     19
+1000    39
+10000   
+
+In Mathematica,
+Coefficient[
+Product[1 + x^(2^i) + x^(2^(i + 1)), {i, 0, Log[2, 10^25] + 1}],
+x, 10^25]
+works (generating function), but is way too slow (10^4 already takes minutes).
+
+We need to find the coefficient of 10^25 in the generating function
+f(x)=(1+x+x^2)(1+x^2+x^4)(1+x^4+x^8)(1+x^8+x^16)... = ∏ (1+x^(2^i)+x^(2^(i+1)) with i from 0 to 2log(10^25)
+However, this takes a long time.
+We see that coefficient a_n equals a_2n.
+Hence in stead of a_10^25, we can also find a_5^25.
+If n is odd, we see that a_n = a_(n-1)/2 + a_(n+1)/2
+In PARI/GP:
+a(n) = if( n<2, n>0, a(n\2) + if( n%2, a(n\2 + 1)))
+
+a(10^25) (or a(5^25)):
+Still slow.
+
+Apparently, this is Stern's Diatomic Series.
+Edsger Dijkstra found a nice iterative program:
+http://www.cs.utexas.edu/~EWD/transcriptions/EWD05xx/EWD570.html
+In PARI/GP:
+fusc(n)=local(a=1,b=0); while(n>0, if(bitand(n,1), b+=a, a+=b); n=n\2); b
+
+fusc(10^25+1)
+178653872807
+Very fast.
