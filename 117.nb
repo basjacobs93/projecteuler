@@ -1,0 +1,68 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1506,         59]
+NotebookOptionsPosition[      1184,         42]
+NotebookOutlinePosition[      1539,         58]
+CellTagsIndexPosition[      1496,         55]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Coefficient", "[", 
+  RowBox[{
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "+", 
+        RowBox[{"x", "^", "2"}], "+", 
+        RowBox[{"x", "^", "3"}], "+", 
+        RowBox[{"x", "^", "4"}]}], ")"}], "^", "n"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "50"}], "}"}]}], "]"}], ",", "x", ",", 
+   "50"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6623118618105183`*^9, 3.662311915034945*^9}}],
+
+Cell[BoxData["100808458960497"], "Output",
+ CellChangeTimes->{{3.66231191009787*^9, 3.662311915525063*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 610},
+WindowMargins->{{Automatic, 45}, {Automatic, 28}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 478, 14, 28, "Input"],
+Cell[1061, 38, 107, 1, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
