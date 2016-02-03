@@ -1,0 +1,10 @@
+P1, P2, ..., P7
+Pi = 1 if color i is present, 0 otherwise
+
+Colors present:
+P1+P2+P3+...+P7
+
+Expectation:
+E(P1+P2+...+P7) = E(P1) + E(P2) + ... + E(P7) = 7*E(P1) = 7*(1-60choose20/70choose20)
+
+6.818741802
